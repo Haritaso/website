@@ -6,8 +6,8 @@
           <feGaussianBlur stdDeviation="1"/>
         </filter>
       </defs>
-      <circle filter="url(#fil)" fill="rgba(40, 172, 224, 0.75)" cx="0" cy="0" r="4"></circle>
-      <rect width="250" height="100" stroke="rgb(40, 172, 224)" rx="10" stroke-width="2" fill="none" />
+      <circle filter="url(#fil)" fill="rgba(40, 172, 224, 0.8)" cx="0" cy="0" r="4"></circle>
+      <rect width="250" height="100" stroke="rgb(40, 172, 224)" rx="10" stroke-width="3" fill="none" />
     </svg>
   </div>
 </template>
@@ -37,7 +37,7 @@ export default {
       translateY: path('y'),
       rotate: path('angle'),
       easing: 'linear',
-      duration: 15000,
+      duration: 20000,
       loop: true
     })
   },
