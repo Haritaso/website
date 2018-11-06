@@ -22,7 +22,7 @@ export default {
       this.$nextTick(() => {
         this.title = true
       })
-    },5000)
+    },2500)
   }
 }
 </script>
@@ -41,12 +41,13 @@ export default {
   text-decoration: none;
 }
 .title {
-  font-size: 32px;
+  font-size: 2rem;
   text-align: center;
   position: relative;
-  bottom: -20px;
+  height: 2rem;
+  top: 1rem;
 }
 .dummybox {
-  height: 38px;
+  height: 2rem;
 }
 </style>
