@@ -8,9 +8,9 @@
 
 <script>
 import anime from 'animejs'
-import twitter from '../assets/twitter'
-import mastodon from '../assets/mastodon'
-import github from '../assets/github'
+import twitter from './twitter'
+import mastodon from './mastodon'
+import github from './github'
 
 export default {
   name: 'icons',

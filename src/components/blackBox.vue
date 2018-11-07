@@ -47,7 +47,7 @@ export default {
 <style scoped>
 #frame {
   position: relative;
-  top: -10px;
+  top: -1em;
 }
 .black {
   z-index: 2;
