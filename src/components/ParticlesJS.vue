@@ -143,6 +143,7 @@ export default {
   bottom: 0;
   display: block;
   z-index: 0;
+  overflow: hidden;
   background: cornflowerblue;
 }
 </style>
