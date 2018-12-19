@@ -21,8 +21,6 @@ export default {
 .back {
   z-index: 1;
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translateY(-50%) translateX(-50%);
+  top: -350px;
 }
 </style>
