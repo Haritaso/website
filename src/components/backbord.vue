@@ -21,6 +21,8 @@ export default {
 .back {
   z-index: 1;
   position: absolute;
-  top: -350px;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
 }
 </style>

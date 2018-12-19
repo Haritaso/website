@@ -17,9 +17,9 @@ export default {
     basicTimeline
       .add({
         targets: '#app .back',
-        translateY: 550,
+        translateY: '150%',
         duration: 1000,
-        elasticity: 400,
+        elasticity: 600,
       })
   },
   components: {
