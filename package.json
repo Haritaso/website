@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "animejs": "^2.2.0",
+    "particles.js": "^2.0.0",
     "vue": "^2.5.17"
   },
   "devDependencies": {

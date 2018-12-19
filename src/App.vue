@@ -1,22 +1,18 @@
 <template>
   <div id="app">
-    <maintitle />
-    <box />
-    <icons />
+    <backbord />
+    <particlesJS />
   </div>
 </template>
 
 <script>
-import maintitle from './components//mainTitle'
-import box from './components/blackBox'
-import icons from './components/iconGroup'
-
+import particlesJS from './components/ParticlesJS'
+import backbord from './components/backbord'
 export default {
   name: 'app',
   components: {
-    maintitle,
-    box,
-    icons
+    particlesJS,
+    backbord
   }
 }
 </script>
