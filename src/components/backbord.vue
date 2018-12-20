@@ -1,9 +1,9 @@
 <template>
   <div class="back">
-    <svg xmlns="http://www.w3.org/2000/svg" x=0 y=0 width=104 height=104  font-size="40">
-      <rect x="0" y="0" width="104" height="104" rx="10" fill="#fff" fill-opacity="0.7" stroke-width="4" />
-      <image x="12" y="12" width="80" height="80" rx="10" xlink:href="https://github.com/haritaso.png" />
-      <rect x="10" y="10" width="84" height="84" rx="10" fill="none" fill-opacity="0" stroke="black" stroke-width="4"/>
+    <svg xmlns="http://www.w3.org/2000/svg" x=0 y=0 width=184 height=184  font-size="40">
+      <rect x="0" y="0" width="184" height="184" rx="20" fill="#fff" fill-opacity="0.7" stroke-width="4" />
+      <image x="12" y="12" width="160" height="160" rx="10" xlink:href="../assets/icon.jpg" />
+      <rect x="10" y="10" width="164" height="164" rx="10" fill="none" fill-opacity="0" stroke="black" stroke-width="4"/>
     </svg>
   </div>
 </template>
