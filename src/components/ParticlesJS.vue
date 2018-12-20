@@ -5,16 +5,14 @@
 <script>
 export default {
   name: 'ParticlesJS',
-
   mounted () {
     require('particles.js')
     this.$nextTick(() => {
       this.initParticlesJS()
     })
   },
-
   methods: {
-    initParticlesJS () {
+    initParticlesJS() {
       /* eslint-disable */
       particlesJS('particles-js', {
         'particles': {
@@ -48,8 +46,8 @@ export default {
             'random': true,
             'anim': {
               'enable': false,
-              'speed': 3,
-              'opacity_min': 0.1,
+              'speed': (Math.random() * (21) ) + 4,
+              'opacity_min': 0.2,
               'sync': false
             }
           },
@@ -89,11 +87,11 @@ export default {
           'detect_on': 'canvas',
           'events': {
             'onhover': {
-              'enable': true,
+              'enable': false,
               'mode': 'repulse'
             },
             'onclick': {
-              'enable': false,
+              'enable': true,
               'mode': 'repulse'
             },
             'resize': true
