@@ -1,0 +1,94 @@
+:root {
+  --red: #e7675a;
+  --orange: #f3af3b;
+  --blue: #5151e5;
+  --skyblue: #72EDF2;
+  --white: #f5f1cd;
+  --black: #0b0b18;
+}
+
+body {
+  background-image: linear-gradient( 135deg, var(--skyblue) 10%, var(--blue) 100%);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  background-size: cover;
+  overflow: hidden;
+  margin: 0;
+}
+
+.main {
+  width: 100vw;
+  height: 100vh;
+}
+
+.iconGroup {
+  display: flex;
+  text-align: center;
+  position: absolute;
+  transform: translateY(-50%) translateX(-50%);
+  top: 50%;
+  left: 50%;
+  flex-direction: row;
+}
+
+.iconGroup .icon {
+  width: 5em;
+  height: 5em;
+  line-height: 5em;
+  display: inline-block;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  border-radius: 30%;
+  border: solid 2px var(--black);
+  margin: 10px;
+  background-color: var(--blue);
+  transition: all 0.35s;
+  transition-timing-function: cubic-bezier(0.31, -0.105, 0.43, 1.59);
+}
+
+.iconGroup .icon:before {
+  content: '';
+  display: block;
+  top: 90%;
+  left: -110%;
+  width: 120%;
+  height: 120%;
+  position: absolute;
+  transform: rotate(45deg);
+  background-color: var(--skyblue);
+  transition: all 0.35s;
+  transition-timing-function: cubic-bezier(0.31, -0.105, 0.43, 1.59);
+}
+
+.iconGroup .icon:focus::before,
+.iconGroup .icon:hover::before {
+  top: -10%;
+  left: -10%;
+}
+
+.awesomeIcon {
+  width: 3em;
+  height: 3em;
+  color: var(--white);
+  transform: scale(0.8);
+  vertical-align: middle;
+}
+
+.icon .awesomeIcon::before {
+  content: '';
+}
+
+.icon:focus .awesomeIcon,
+.icon:hover .awesomeIcon {
+  color: var(--black);
+  transform: scale(1);
+  transition: all 0.35s;
+  transition-timing-function: cubic-bezier(0.31, -0.105, 0.43, 1.59);
+}
+
+.avatarImg {
+  width: 2em;
+  height: 2em;
+}
