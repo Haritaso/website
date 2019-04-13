@@ -15,7 +15,7 @@ module.exports = {
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        use: [{ loader: 'babel-loader' }],
+        use: [{ loader: 'babel-loader', options: { cacheDirectory: true } }],
       },
       {
         test: /\.html$/,
@@ -66,7 +66,7 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       filename: 'index.html', // これ変えたらdevServer死ぬ
-      template: 'public/index.html',
+      template: 'assets/index.html',
     }),
     new MiniCssExtractPlugin({
       filename: '[name].css',

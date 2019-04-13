@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
-import '../style/style.scss';
+import '../assets/scss/style.scss';
 
 function App() {
   const [count, setCount] = useState(0);
