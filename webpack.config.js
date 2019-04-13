@@ -1,64 +1,39 @@
 const path = require('path');
-const HtmlWebPackPlugin = require('html-webpack-plugin');
-const TerserPlugin = require('terser-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   entry: './src/index.js',
   mode: 'production',
   output: { filename: '[name].[hash].js', path: path.join(__dirname, 'dist') },
+  devtool: 'source-map',
   module: {
     rules: [
       {
-        test: /\.js?$/,
+        test: /\.js$/,
         exclude: /node_modules/,
-        loader: 'babel-loader',
-        query: {
-          plugins: ["transform-react-jsx"]
-        }
+        use: [{ loader: 'babel-loader' }],
       },
       {
         test: /\.html$/,
-        use: [
-          {
-            loader: 'html-loader',
-            options: { minimize: true, removeComments: true }
-          }
-        ]
+        use: [{ loader: 'html-loader', options: { minimize: true } }],
       },
       {
         test: /\.js$/,
+        enforce: 'pre',
         exclude: /node_modules/,
-        loader: ['babel-loader']
+        use: [{ loader: 'eslint-loader' }],
       },
-      {
-        test: /\.js$/,
-        enforce: "pre",
-        exclude: /node_modules/,
-        loader: ["eslint-loader"]
-      },
-      {
-        test: /\.css$/,
-        loaders: ['style-loader', 'css-loader?modules'],
-      },
-    ]
+    ],
   },
   plugins: [
-    new HtmlWebPackPlugin({
+    new HtmlWebpackPlugin({
       filename: 'index.html',
-      template: 'public/index.html'
+      template: 'public/index.html',
     }),
   ],
-  optimization: {
-    minimizer: [
-      new TerserPlugin({
-        parallel: true,
-        terserOptions: { output: { comments: false } }
-      })
-    ]
-  },
   devServer: {
     port: 3000,
     hot: true,
-    stats: 'errors-only'
+    stats: 'errors-only',
   },
-}
+};

@@ -1,0 +1,10 @@
+{
+  "env": { "browser": true },
+  "extends": "airbnb",
+  "plugins": [ "react", "jsx-a11y", "import", "react-hooks" ],
+  "rules": {
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "react-hooks/rules-of-hooks": 2,
+    "react-hooks/exhaustive-deps": 1
+  }
+}
