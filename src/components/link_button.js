@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 const LinkButton = (props) => {
   const { name, link } = props;
   return (
-    <div><a href={link}>{name}</a></div>
+    <a href={link}>{name}</a>
   );
 };
 
