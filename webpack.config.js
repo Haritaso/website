@@ -6,10 +6,14 @@ const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const postcssPresetEnv = require('postcss-preset-env');
 const WebpackBar = require('webpackbar');
 
+const devMode = process.env.NODE_ENV !== 'production';
+
 module.exports = {
-  entry: './src/index.js',
+  entry: {
+    bundle: './src/index.js',
+  },
   mode: 'production',
-  output: { filename: '[hash].js', path: path.join(__dirname, 'dist') },
+  output: { filename: '[name].[hash].js', path: path.join(__dirname, 'dist') },
   module: {
     rules: [
       {
@@ -30,7 +34,7 @@ module.exports = {
       {
         test: /\.scss$/,
         use: [
-          { loader: MiniCssExtractPlugin.loader, options: { reloadAll: true } },
+          devMode ? 'style-loader' : { loader: MiniCssExtractPlugin.loader, options: { reloadAll: true } },
           { loader: 'css-loader' },
           { loader: 'postcss-loader', options: { ident: 'postcss', plugins: () => postcssPresetEnv({ autoprefixer: { grid: true } }) } },
           { loader: 'sass-loader' },
@@ -69,7 +73,7 @@ module.exports = {
       template: 'assets/index.html',
     }),
     new MiniCssExtractPlugin({
-      filename: '[name].css',
+      filename: '[name].[hash].css',
       chunkFilename: '[id].css',
     }),
     new WebpackBar(),

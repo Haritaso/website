@@ -1,14 +1,18 @@
-import React, { useState } from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
+
+import LinkBox from './components/link_box';
+import Particles from './components/Particles';
+
 import '../assets/scss/style.scss';
 
 function App() {
-  const [count, setCount] = useState(0);
+  // const [count, setCount] = useState(0);
 
   return (
     <>
-      <p className="aa">{count}</p>
-      <button type="button" onClick={() => setCount(count + 1)}>a</button>
+      <LinkBox />
+      <Particles />
     </>
   );
 }

@@ -1,4 +1,54 @@
-.aa {
+$outline: rgb(0, 0, 0);
+$btncolor: rgb(159, 233, 190);
+
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+}
+
+div {
   display: grid;
-  color: blue;
+}
+
+#App {
+  display: grid;
+  height: 100vh;
+  outline: 1px dashed $outline;
+  outline-offset: -5px;
+  grid-template: {
+    columns: 10% 80% 10%;
+    rows: 1fr auto 1fr;
+  }
+}
+.main {
+  justify-content: space-around;
+  align-self: center;
+  grid: {
+    column: 2 / 3;
+    row: 2 / 3;
+    auto-rows: 50px;
+    template-columns: repeat(auto-fit, 10em);
+    }
+
+    & div {
+      background-color: $btncolor;
+      margin: 5px 0;
+      height: 40px;
+      outline:1px dashed $outline;
+      outline-offset: -3px;
+
+      & a {
+        align-self: center;
+        text-align: center;
+        text-decoration: none;
+      }
+    }
+}
+
+.background {
+  grid: {
+    column: 1 / 4;
+    row: 1 / 4;
+  }
 }

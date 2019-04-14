@@ -3,11 +3,12 @@
   "extends": "airbnb",
   "plugins": [ "react", "jsx-a11y", "import", "react-hooks" ],
   "rules": {
-    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
-    "react-hooks/rules-of-hooks": 2,
-    "react-hooks/exhaustive-deps": 1,
-    "import/no-extraneous-dependencies":[2, {
+    "react/jsx-filename-extension": ["warn", { "extensions": [".js", ".jsx"] }],
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
+    "import/no-extraneous-dependencies": ["error", {
       "devDependencies": true
-    }]
+    }],
+    "arrow-body-style": ["off", "as-needed"]
   }
 }
