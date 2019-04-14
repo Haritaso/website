@@ -1,5 +1,6 @@
-$outline: rgb(0, 0, 0);
-$btncolor: rgb(159, 233, 190);
+$outline: #a8a8ff;
+$btncolor: #d3a8ff;
+$backcolor: #000000;
 
 body, html {
   margin: 0;
@@ -13,8 +14,10 @@ div {
 
 #App {
   display: grid;
-  height: 100vh;
+  height: calc(100vh - 10px);
+  background-color: $backcolor;
   outline: 1px dashed $outline;
+  margin: 5px;
   outline-offset: -5px;
   grid-template: {
     columns: 10% 80% 10%;
@@ -35,7 +38,7 @@ div {
       background-color: $btncolor;
       margin: 5px 0;
       height: 40px;
-      outline:1px dashed $outline;
+      outline:1px dashed $backcolor;
       outline-offset: -3px;
 
       & a {
@@ -52,3 +55,16 @@ div {
     row: 1 / 4;
   }
 }
+
+/*#ffa8a8
+#ffa8d3
+#ffa8ff
+#d3a8ff
+#a8a8ff
+#a8d3ff
+#a8ffff
+#a8ffd3
+#a8ffa8
+#d3ffa8
+#ffffa8
+#ffd3a8*/

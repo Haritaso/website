@@ -16,12 +16,12 @@ const ParticlesComponents = () => {
             },
           },
           color: {
-            value: '#ffffff',
+            value: '#ffa8d3',
           },
           shape: {
             type: 'image',
             stroke: {
-              width: 0,
+              width: 4,
               color: '#000000',
             },
             polygon: {
@@ -56,7 +56,7 @@ const ParticlesComponents = () => {
           line_linked: {
             enable: false,
             distance: 320.6824121731046,
-            color: '#ffffff',
+            color: '#000000',
             opacity: 0.4,
             width: 2,
           },
