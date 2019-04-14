@@ -1,5 +1,6 @@
 import React from 'react';
 import Particles from 'react-particles-js';
+import sakura from '../../assets/img/sakura.png';
 
 const ParticlesComponents = () => {
   return (
@@ -27,7 +28,7 @@ const ParticlesComponents = () => {
               nb_sides: 4,
             },
             image: {
-              src: '../../assets/img/sakura.png',
+              src: sakura,
               width: 100,
               height: 100,
             },
