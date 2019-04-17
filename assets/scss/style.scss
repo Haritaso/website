@@ -1,6 +1,7 @@
 $white: #ffffff;
 $outline: #a8a8ff;
 $btncolor: #d3a8ff;
+$btnshadow: #d4a8fffd;
 $backcolor: #000000;
 
 body, html {
@@ -15,10 +16,9 @@ div {
 
 #App {
   display: grid;
-  height: calc(100vh - 10px);
+  height: 100vh;
   background-color: $backcolor;
-  outline: 1px dashed $outline;
-  margin: 5px;
+  margin: 0 5px;
   outline-offset: -5px;
   grid-template: {
     columns: 10% 80% 10%;
@@ -35,22 +35,34 @@ div {
     auto-rows: 50px;
     template-columns: repeat(auto-fit, 10em);
     }
+}
 
-    & a {
-      background-color: transparent;
-      border: 2px solid $white;
-      border-radius: 5px;
-      margin: 5px 0;
-      line-height: 40px;
-      align-self: center;
-      text-align: center;
-      color: $btncolor;
-      text-decoration: none;
-      z-index: 2;
-      &:hover {
-        background-color: rgba(255, 255, 255, .2);
-      }
+.linkButton {
+  & a {
+    background-color: transparent;
+    border: 2px double $white;
+    border-radius: 5px;
+    margin: 5px 0;
+    line-height: 40px;
+    align-self: center;
+    text-align: center;
+    color: $btncolor;
+    text-decoration: none;
+    z-index: 2;
+    transition: all 0.5s;
+    &:hover {
+      background-color: rgba(255, 255, 255, .2);
+      box-shadow:0px 0px 10px 5px $btncolor;
     }
+  }
+}
+
+.content {
+  grid: {
+    column: 2 / 3;
+    row: 2 / 3;
+  }
+  color: $white;
 }
 
 .background {

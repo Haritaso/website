@@ -5,9 +5,9 @@ const LinkBox = () => {
   return (
     <div className="main">
       <LinkButton name="Home" link="/" />
-      <LinkButton name="Profile" link="/" />
-      <LinkButton name="Works" link="/" />
-      <LinkButton name="Contact" link="/" />
+      <LinkButton name="Profile" link="/profile" />
+      <LinkButton name="Works" link="/works" />
+      <LinkButton name="Contact" link="/contact" />
     </div>
   );
 };
