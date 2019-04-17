@@ -32,8 +32,8 @@ div {
   grid: {
     column: 2 / 3;
     row: 2 / 3;
-    auto-rows: 50px;
-    template-columns: repeat(auto-fit, 10em);
+    auto-rows: 60px;
+    template-columns: repeat(auto-fit, 15em);
     }
 }
 
@@ -43,7 +43,7 @@ div {
     border: 2px double $white;
     border-radius: 5px;
     margin: 5px 0;
-    line-height: 40px;
+    line-height: 50px;
     align-self: center;
     text-align: center;
     color: $btncolor;
@@ -57,11 +57,14 @@ div {
   }
 }
 
-.content {
+.footer {
+  align-self: start;
+  justify-self: center;
   grid: {
     column: 2 / 3;
-    row: 2 / 3;
+    row: 3 / 4;
   }
+  width: 15em;
   color: $white;
 }
 

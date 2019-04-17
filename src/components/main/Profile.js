@@ -1,11 +1,11 @@
 import React from 'react';
-import LinkButton from '../link_button';
+import Footer from './footer';
 
 const Profile = () => {
   return (
-    <div className="content">
-      <LinkButton name="Home" link="/" />
-    </div>
+    <>
+      <Footer />
+    </>
   );
 };
 
