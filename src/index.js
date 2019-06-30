@@ -6,7 +6,6 @@ import LinkBox from './components/link_box';
 import Profile from './components/main/Profile';
 import Works from './components/main/Works';
 import Contact from './components/main/Contact';
-import Particles from './components/Particles';
 
 import '../assets/scss/style.scss';
 
@@ -19,7 +18,6 @@ function App() {
         <Route exact path="/works" component={Works} />
         <Route exact path="/contact" component={Contact} />
       </Switch>
-      <Particles />
     </Router>
   );
 }

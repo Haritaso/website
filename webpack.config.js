@@ -34,9 +34,17 @@ module.exports = {
       {
         test: /\.scss$/,
         use: [
-          devMode ? 'style-loader' : { loader: MiniCssExtractPlugin.loader, options: { reloadAll: true } },
+          devMode
+            ? 'style-loader'
+            : { loader: MiniCssExtractPlugin.loader, options: { reloadAll: true } },
           { loader: 'css-loader' },
-          { loader: 'postcss-loader', options: { ident: 'postcss', plugins: () => postcssPresetEnv({ autoprefixer: { grid: true } }) } },
+          {
+            loader: 'postcss-loader',
+            options: {
+              ident: 'postcss',
+              plugins: () => postcssPresetEnv({ autoprefixer: { grid: true } }),
+            },
+          },
           { loader: 'sass-loader' },
         ],
       },
@@ -83,6 +91,7 @@ module.exports = {
     new WebpackBar(),
   ],
   devServer: {
+    historyApiFallback: { disableDotRule: true },
     port: 3000,
     stats: 'errors-only',
   },
