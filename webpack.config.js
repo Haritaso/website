@@ -6,13 +6,10 @@ const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const postcssPresetEnv = require('postcss-preset-env');
 const WebpackBar = require('webpackbar');
 
-const devMode = process.env.NODE_ENV !== 'production';
-
 module.exports = {
   entry: {
     bundle: './src/index.js',
   },
-  mode: 'production',
   output: { filename: '[name].[hash].js', path: path.join(__dirname, 'dist') },
   module: {
     rules: [
@@ -26,17 +23,9 @@ module.exports = {
         use: [{ loader: 'html-loader', options: { minimize: true } }],
       },
       {
-        test: /\.js$/,
-        enforce: 'pre',
-        exclude: /node_modules/,
-        use: [{ loader: 'eslint-loader' }],
-      },
-      {
         test: /\.scss$/,
         use: [
-          devMode
-            ? 'style-loader'
-            : { loader: MiniCssExtractPlugin.loader, options: { reloadAll: true } },
+          { loader: MiniCssExtractPlugin.loader },
           { loader: 'css-loader' },
           {
             loader: 'postcss-loader',
@@ -47,10 +36,6 @@ module.exports = {
           },
           { loader: 'sass-loader' },
         ],
-      },
-      {
-        test: /\.(jpg|png)$/,
-        loaders: 'file-loader?name=[name].[ext]',
       },
     ],
   },
