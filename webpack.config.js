@@ -42,7 +42,7 @@ module.exports = {
   optimization: {
     minimizer: [
       new TerserPlugin({
-        parallel: true,
+        parallel: 4,
         terserOptions: {
           ecma: 6,
           output: {
@@ -54,7 +54,13 @@ module.exports = {
       new OptimizeCSSAssetsPlugin(),
     ],
     splitChunks: {
+      name: 'vendor',
+      chunks: 'all',
       cacheGroups: {
+        vendor: {
+          name: 'vendor',
+          test: /node_modules/,
+        },
         styles: {
           name: 'styles',
           test: /\.css$/,
