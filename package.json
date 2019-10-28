@@ -23,7 +23,7 @@
     "babel-plugin-emotion": "^10.0.21",
     "eslint": "^5.16.0",
     "eslint-config-airbnb": "^17.1.0",
-    "eslint-config-prettier": "^4.3.0",
+    "eslint-config-prettier": "^6.4.0",
     "eslint-loader": "^3.0.2",
     "eslint-plugin-import": "^2.16.0",
     "eslint-plugin-jsx-a11y": "^6.2.1",
