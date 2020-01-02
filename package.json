@@ -1,10 +1,15 @@
 {
   "name": "website",
+  "license": "UNLICENSED",
+  "private": true,
   "scripts": {
-    "build": "bsb -make-world",
+    "build:re": "bsb -make-world",
+    "build:js": "webpack --config webpack.prod.ts",
+    "watch:re": "bsb -make-world -w",
+    "watch:js": "webpack-dev-server --config webpack.dev.ts",
+    "clean:re": "bsb -clean-world",
     "dev": "npm-run-all -p watch:*",
-    "watch:js": "webpack-dev-server",
-    "watch:re": "bsb -make-world -w"
+    "build": "npm-run-all -s clean:re build:*"
   },
   "dependencies": {
     "react": "16.12.0",
@@ -12,12 +17,27 @@
     "reason-react": "0.7.0"
   },
   "devDependencies": {
+    "@babel/core": "7.7.7",
+    "@babel/preset-modules": "0.1.2",
+    "@babel/preset-react": "7.7.4",
+    "@types/terser-webpack-plugin": "2.2.0",
+    "@types/webpack": "4.41.1",
+    "@types/webpack-dev-server": "3.9.0",
+    "@types/webpack-merge": "4.1.5",
+    "babel-loader": "8.0.6",
     "bs-platform": "7.0.1",
     "clean-webpack-plugin": "3.0.0",
     "html-loader": "0.5.5",
     "html-webpack-plugin": "3.2.0",
     "npm-run-all": "4.1.5",
+    "prettier": "1.19.1",
+    "pretty-quick": "2.0.1",
+    "terser-webpack-plugin": "2.3.1",
+    "ts-node": "8.5.4",
+    "typescript": "3.7.4",
     "webpack": "4.41.5",
-    "webpack-dev-server": "3.10.1"
+    "webpack-cli": "3.3.10",
+    "webpack-dev-server": "3.10.1",
+    "webpack-merge": "4.2.2"
   }
 }
