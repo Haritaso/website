@@ -1,0 +1,13 @@
+{
+  "presets": [
+    [
+      "@babel/preset-modules",
+      {
+        "loose": true
+      }
+    ],
+    [
+      "@babel/preset-react"
+    ]
+  ]
+}
