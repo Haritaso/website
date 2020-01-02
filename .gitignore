@@ -4,3 +4,4 @@ dist
 
 .merlin
 .bsb.lock
+.linaria-cache
