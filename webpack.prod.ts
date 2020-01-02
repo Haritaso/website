@@ -1,10 +1,10 @@
-import TerserPlugin from "terser-webpack-plugin";
-import webpack from "webpack";
-import merge from "webpack-merge";
-import common from "./webpack.common";
+import TerserPlugin from 'terser-webpack-plugin';
+import webpack from 'webpack';
+import merge from 'webpack-merge';
+import common from './webpack.common';
 
 const config: webpack.Configuration = merge(common, {
-  mode: "production",
+  mode: 'production',
   optimization: {
     minimizer: [
       new TerserPlugin({
@@ -18,7 +18,7 @@ const config: webpack.Configuration = merge(common, {
       })
     ]
   },
-  stats: "errors-only"
+  stats: 'errors-only'
 });
 
 export default config;
