@@ -4,8 +4,16 @@ import Footer from './footer';
 const Profile = () => {
   const [year, setYear] = React.useState();
   React.useEffect(() => {
-    const now = new Date();
-    setYear(now.getFullYear() - 2000);
+    const today = new Date();
+    const birthday = new Date(2000, 5, 20);
+    const thisYearBirthday = new Date(
+      today.getFullYear(),
+      birthday.getMonth(),
+      birthday.getDate()
+    );
+    const age = today.getFullYear() - birthday.getFullYear();
+    if (today < thisYearBirthday) setYear(age - 1);
+    else setYear(age);
   }, []);
   return (
     <>
@@ -21,7 +29,9 @@ const Profile = () => {
         </div>
         <div className="box">
           <h2 className="title">Experienced Framework</h2>
-          <p className="text">React Redux redux-saga redux-thunk Vue.js Vuex Nuxt.js etc...</p>
+          <p className="text">
+            React Redux redux-saga redux-thunk Vue.js Vuex Nuxt.js etc...
+          </p>
         </div>
         <div className="box">
           <h2 className="title">Skills</h2>
