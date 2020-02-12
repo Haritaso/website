@@ -1,0 +1,19 @@
+{
+  "presets": [
+    ["@babel/preset-typescript", { "jsxPragma": "h" }],
+    "@babel/preset-react",
+    "@babel/preset-modules"
+  ],
+  "plugins": [
+    ["@babel/plugin-transform-react-jsx", { "pragma": "h" }],
+    [
+      "module-resolver",
+      {
+        "alias": {
+          "react": "preact/compat",
+          "react-dom": "preact/compat"
+        }
+      }
+    ]
+  ]
+}
