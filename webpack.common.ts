@@ -1,4 +1,5 @@
 import HtmlWebPackPlugin from "html-webpack-plugin"
+import { CleanWebpackPlugin } from "clean-webpack-plugin"
 import { resolve } from "path"
 import webpack from "webpack"
 
@@ -6,6 +7,7 @@ const config: webpack.Configuration = {
   entry: "./src/index.tsx",
   output: {
     filename: "bundle.[hash].js",
+    chunkFilename: "vender.[chunkhash].js",
     path: resolve(__dirname, "dist"),
   },
   module: {
@@ -23,7 +25,11 @@ const config: webpack.Configuration = {
   },
   resolve: { extensions: [".js", ".ts", ".tsx"] },
   optimization: { splitChunks: { name: "vendor", chunks: "initial" } },
-  plugins: [new HtmlWebPackPlugin({ template: "assets/index.html" })],
+  plugins: [
+    new webpack.ProgressPlugin(),
+    new CleanWebpackPlugin(),
+    new HtmlWebPackPlugin({ template: "assets/index.html" }),
+  ],
 }
 
 export default config
