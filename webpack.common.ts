@@ -1,5 +1,6 @@
 import HtmlWebPackPlugin from "html-webpack-plugin"
 import { CleanWebpackPlugin } from "clean-webpack-plugin"
+import MiniCssExtractPlugin from "mini-css-extract-plugin"
 import { resolve } from "path"
 import webpack from "webpack"
 
@@ -19,16 +20,38 @@ const config: webpack.Configuration = {
       {
         test: /\.(ts|tsx)$/,
         exclude: /node_modules/,
-        use: [{ loader: "babel-loader", options: { cacheDirectory: true } }],
+        use: [
+          { loader: "babel-loader", options: { cacheDirectory: true } },
+          { loader: "linaria/loader" },
+        ],
+      },
+      {
+        test: /\.css$/,
+        use: [
+          { loader: MiniCssExtractPlugin.loader },
+          { loader: "css-loader" },
+        ],
       },
     ],
   },
-  resolve: { extensions: [".js", ".ts", ".tsx"] },
+  resolve: {
+    extensions: [".js", ".ts", ".tsx"],
+    alias: {
+      react: "preact/compat",
+      "react-dom": "preact/compat",
+    },
+  },
   optimization: { splitChunks: { name: "vendor", chunks: "initial" } },
   plugins: [
     new webpack.ProgressPlugin(),
     new CleanWebpackPlugin(),
     new HtmlWebPackPlugin({ template: "assets/index.html" }),
+    new MiniCssExtractPlugin({
+      filename: "styles-[contenthash].css",
+    }),
+    new webpack.ProvidePlugin({
+      JSX: "../node_modules/preact/src/index.d",
+    }),
   ],
 }
 

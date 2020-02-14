@@ -1,7 +1,12 @@
 import { h } from "preact"
+import { styled } from "linaria/react"
+
+const Text = styled.div`
+  color: red;
+`
 
 const App = () => {
-  return <div>aaa</div>
+  return <Text>aaa</Text>
 }
 
 export default App
