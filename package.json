@@ -5,7 +5,7 @@
     "webpack:dev": "TS_NODE_PROJECT='webpack.tsconfig.json' webpack-dev-server --config webpack.dev.ts",
     "webpack:build": "TS_NODE_PROJECT='webpack.tsconfig.json' webpack --config webpack.prod.ts",
     "tsc": "tsc",
-    "dev": "npm-run-all -s tsc -p *:dev",
+    "dev": "npm-run-all -p *:dev",
     "build": "npm-run-all -s tsc *:build"
   },
   "dependencies": {
