@@ -25,7 +25,7 @@ const config: webpack.Configuration = merge(common, {
     /* eslint-disable @typescript-eslint/camelcase */
     new WebpackPwaManifest({
       icons: iconSize.map(size => ({
-        src: `https://s.gravatar.com/avatar/b74290f5f1d0dd9dde8511c3a5b57955?s=${size}.jpeg`,
+        src: `https://s.gravatar.com/avatar/b74290f5f1d0dd9dde8511c3a5b57955?s=${size}.png`,
         size: `${size}x${size}`,
       })),
       inject: true,
