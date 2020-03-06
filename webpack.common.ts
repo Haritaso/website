@@ -49,9 +49,6 @@ const config: webpack.Configuration = {
     new MiniCssExtractPlugin({
       filename: "styles-[contenthash].css",
     }),
-    new webpack.ProvidePlugin({
-      JSX: "../node_modules/preact/src/index.d",
-    }),
   ],
 }
 

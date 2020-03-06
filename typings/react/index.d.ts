@@ -8,6 +8,7 @@ export {
   VNode as ReactElement,
   VNode as ReactNode,
   FunctionalComponent as StatelessComponent,
+  JSX,
 } from "preact"
 
 export type ReactType<P = {}> = ComponentClass<P, {}> | FunctionComponent<P>

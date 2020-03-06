@@ -16,10 +16,12 @@ const App = () => {
         height="100%"
       >
         <Grid alignItems="center">
-          <Text size="1.5rem">はりたそ</Text>
+          <Text fontSize="1.5rem">はりたそ</Text>
         </Grid>
         <Grid alignItems="center" margin="0.75rem 0">
-          <Text size="1rem">web業界で飯を食べようとしているwebエンジニア</Text>
+          <Text fontSize="1rem">
+            web業界で飯を食べようとしているwebエンジニア
+          </Text>
         </Grid>
         <Grid alignItems="center">
           <Icon

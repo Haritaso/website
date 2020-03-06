@@ -10,10 +10,10 @@ type Property =
   | "padding"
 
 type Props = {
-  [P in Property]: string
+  [P in Property]?: string
 }
 
-export default styled.div<Partial<Props>>`
+export default styled.div<Props>`
   display: flex;
   align-items: ${({ alignItems }) => alignItems || "stretch"};
   justify-content: ${({ justify }) => justify || "stretch"};

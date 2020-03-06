@@ -1,12 +1,11 @@
 import { styled } from "linaria/react"
 
-type Property = "size"
-
 type Props = {
-  [P in Property]: string
+  fontSize?: string
+  color?: string
 }
 
-export default styled.div<Partial<Props>>`
-  font-size: ${({ size }) => size || "1rem"};
-  color: var(--white);
+export default styled.div<Props>`
+  font-size: ${({ fontSize }) => fontSize || "1rem"};
+  color: var(${({ color }) => color || "--white"});
 `
