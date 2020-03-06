@@ -27,11 +27,13 @@ const App = () => {
           <Icon
             size={3}
             href={`https://twitter.com/haritaso`}
+            alt="Twitter"
             compoent={<Twitter />}
           />
           <Icon
             size={3}
             href={`https://github.com/Haritaso`}
+            alt="Github"
             compoent={<Github />}
           />
         </Grid>

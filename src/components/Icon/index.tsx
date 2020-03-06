@@ -4,6 +4,7 @@ import { styled } from "linaria/react"
 type Props = {
   size: number
   href: string
+  alt: string
   compoent?: ComponentChildren
 }
 
@@ -17,7 +18,12 @@ const IconWrapper = styled.a<{ size: number }>`
 
 const Icon = (props: Props) => {
   return (
-    <IconWrapper size={props.size} href={props.href}>
+    <IconWrapper
+      size={props.size}
+      href={props.href}
+      alt={props.alt}
+      aria-label={props.alt}
+    >
       {props.compoent}
     </IconWrapper>
   )
