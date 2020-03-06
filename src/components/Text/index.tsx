@@ -7,5 +7,5 @@ type Props = {
 
 export default styled.div<Props>`
   font-size: ${({ fontSize }) => fontSize || "1rem"};
-  color: var(${({ color }) => color || "--white"});
+  color: ${({ color }) => color || "var(--white)"};
 `
