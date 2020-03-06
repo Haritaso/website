@@ -15,8 +15,6 @@ const config: webpack.Configuration = merge(common, {
   stats: "errors-only",
   plugins: [
     new WorkBoxWebpackPlugin.GenerateSW({
-      globDirectory: resolve(__dirname, "dist"),
-      globPatterns: ["*.{html,js,css}"],
       swDest: resolve(__dirname, "dist/sw.js"),
       clientsClaim: true,
       skipWaiting: true,
