@@ -1,7 +1,8 @@
 .DS_Store
 node_modules
 /dist
-.linaria-cache/*
+.linaria-cache/
+.eslintcache
 
 # local env files
 .env.local

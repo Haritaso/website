@@ -2,6 +2,8 @@
   "name": "website",
   "scripts": {
     "prettier": "prettier --write '**/*.{html,ts,tsx,json,md}'",
+    "prettier:ci": "prettier --check '**/*.{html,ts,tsx,json,md}'",
+    "lint": "eslint '**/*.{ts,tsx}' --cache",
     "webpack:dev": "TS_NODE_PROJECT='webpack.tsconfig.json' webpack-dev-server --config webpack.dev.ts",
     "webpack:build": "TS_NODE_PROJECT='webpack.tsconfig.json' webpack --config webpack.prod.ts",
     "tsc": "tsc",
