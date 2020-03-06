@@ -10,24 +10,29 @@ export const globals = css`
     body {
       margin: 0;
       padding: 0;
-      height: 100%;
-      width: 100%;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
         Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", Helvetica, sans-serif;
-      font-size: 20px;
+      font-size: 1rem;
       line-height: 1.42857;
       --emerald-green: #93ff8c;
-      --sky-blue: #46ffd3;
+      --sky-blue: #5ee7df;
       --yellow: #fffd78;
       --purple: #8a57ff;
       --blue: #4b95eb;
-      --bg: #04080d;
-      background-color: var(--bg);
+      --black: #04080d;
+      --white: #ffffff;
+      background-color: var(--black);
     }
     *,
     *:before,
     *:after {
       box-sizing: inherit;
+    }
+
+    #root > div {
+      position: absolute;
+      width: 100%;
+      height: 100%;
     }
   }
 `

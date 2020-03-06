@@ -9,10 +9,30 @@ import Grid from "./components/Grid"
 const App = () => {
   return (
     <div className={globals}>
-      <Text>aaa</Text>
-      <Grid alignItems="center">
-        <Icon size={120} compoent={<Twitter />} />
-        <Icon size={120} compoent={<Github />} />
+      <Grid
+        direction="column"
+        alignItems="center"
+        justify="center"
+        height="100%"
+      >
+        <Grid alignItems="center">
+          <Text size="1.5rem">はりたそ</Text>
+        </Grid>
+        <Grid alignItems="center" margin="0.75rem 0">
+          <Text size="1rem">web業界で飯を食べようとしているwebエンジニア</Text>
+        </Grid>
+        <Grid alignItems="center">
+          <Icon
+            size={3}
+            href={`https://twitter.com/haritaso`}
+            compoent={<Twitter />}
+          />
+          <Icon
+            size={3}
+            href={`https://github.com/Haritaso`}
+            compoent={<Github />}
+          />
+        </Grid>
       </Grid>
     </div>
   )
