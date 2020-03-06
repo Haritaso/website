@@ -4,6 +4,9 @@ import TerserPlugin from "terser-webpack-plugin"
 import WorkBoxWebpackPlugin from "workbox-webpack-plugin"
 import { resolve } from "path"
 import common from "./webpack.common"
+import WebpackPwaManifest from "webpack-pwa-manifest"
+
+const iconSize = [96, 128, 192]
 
 const config: webpack.Configuration = merge(common, {
   mode: "production",
@@ -19,6 +22,19 @@ const config: webpack.Configuration = merge(common, {
       clientsClaim: true,
       skipWaiting: true,
     }),
+    /* eslint-disable @typescript-eslint/camelcase */
+    new WebpackPwaManifest({
+      icons: iconSize.map(size => ({
+        src: `https://s.gravatar.com/avatar/b74290f5f1d0dd9dde8511c3a5b57955?s=${size}.jpeg`,
+        size: `${size}x${size}`,
+      })),
+      background_color: "#04080d",
+      start_url: "https://haritaso.me",
+      description: "website",
+      short_name: "website",
+      name: "はりたそのサイト",
+    }),
+    /* eslint-ensable @typescript-eslint/camelcase */
   ],
 })
 
